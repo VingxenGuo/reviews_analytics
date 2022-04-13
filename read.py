@@ -8,7 +8,13 @@ with open('reviews.txt','r') as f:
             print(len(data))
 print('檔案讀取完了，總共有',len(data), '筆資料')
 
+new = []
 sum_len = 0
 for d in data:
-    sum_len = sum_len + len(d)
+    if len(d) < 100:
+        new.append(d)
+    sum_len += len(d)
+
+print('一共有',len(new),'筆留延長度小於100')
 print('平均是', sum_len / len(data))
+
